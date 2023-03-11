@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id'])) {
 $user_list = '';
 
 // getting the list of users
-$query = "SELECT * FROM tbl_user WHERE is_deleted=0 AND type='user' ORDER BY first_name";
+$query = "SELECT * FROM tbl_user WHERE is_deleted=0 AND type='staff' ORDER BY first_name";
 $users = mysqli_query($connection, $query);
 
 verify_query($users);
@@ -42,7 +42,7 @@ while ($user = mysqli_fetch_assoc($users)) {
 	<?php display_sidebar($_SESSION['type']); ?>
 	<main>
 		<div class="content">
-			<h1>Users</h1>
+			<h1>Staff</h1>
 
 			<table class="masterlist">
 				<tr>

@@ -62,7 +62,7 @@ if (isset($_POST['submit'])) {
 
 		if ($result) {
 			// query successful... redirecting to users page
-			header('Location: users.php?user_added=true');
+			header('Location: dashboard.php?user_added=true');
 		} else {
 			$errors[] = 'Failed to add the new record.';
 		}
@@ -84,47 +84,48 @@ if (isset($_POST['submit'])) {
 <body>
 	<header>
 		<div class="appname">Technical Support Management System</div>
-		<?php if(isset($_SESSION['user_id'])) { echo '<div class="loggedin">Welcome ' . $_SESSION['first_name'] . '! <a href="logout.php">Log Out</a></div>'; } ?>
-		
+		<?php if (isset($_SESSION['user_id'])) {
+			echo '<div class="loggedin">Welcome ' . $_SESSION['first_name'] . '! <a href="logout.php">Log Out</a></div>';
+		} ?>
 	</header>
-
+	<?php display_sidebar($_SESSION['type']); ?>
 	<main>
-		<h1>Add New User<span> <a href="users.php">
-					< Back to User List</a></span></h1>
+		<div class="content">
+			<h1>Add New User</h1>
 
-		<?php
-
-		if (!empty($errors)) {
-			display_errors($errors);
-		}
-
-		?>
-
-		<form action="add-user.php" method="post" class="userform">
-
-			<p>
-				<label for="">First Name:</label>
-				<input type="text" name="first_name" <?php echo 'value="' . $first_name . '"'; ?>>
-			</p>
-
-			<p>
-				<label for="">Last Name:</label>
-				<input type="text" name="last_name" <?php echo 'value="' . $last_name . '"'; ?>>
-			</p>
-
-			<p>
-				<label for="">Email Address:</label>
-				<input type="text" name="email" <?php echo 'value="' . $email . '"'; ?>>
-			</p>
-
-			<p>
-				<label for="">New Password:</label>
-				<input type="password" name="password">
-			</p>
-
-			
 			<?php
-				if (isset($_SESSION['type'])){
+
+			if (!empty($errors)) {
+				display_errors($errors);
+			}
+
+			?>
+
+			<form action="add-user.php" method="post" class="userform">
+
+				<p>
+					<label for="">First Name:</label>
+					<input type="text" name="first_name" <?php echo 'value="' . $first_name . '"'; ?>>
+				</p>
+
+				<p>
+					<label for="">Last Name:</label>
+					<input type="text" name="last_name" <?php echo 'value="' . $last_name . '"'; ?>>
+				</p>
+
+				<p>
+					<label for="">Email Address:</label>
+					<input type="text" name="email" <?php echo 'value="' . $email . '"'; ?>>
+				</p>
+
+				<p>
+					<label for="">New Password:</label>
+					<input type="password" name="password">
+				</p>
+
+
+				<?php
+				if (isset($_SESSION['type'])) {
 					echo '<p>
 								<label for="">User Type:</label>
 								<select name="user_type">
@@ -136,18 +137,21 @@ if (isset($_POST['submit'])) {
 				} else {
 					echo '<input type="hidden" name="user_type" value="user"></input>';
 				}
-			?>
+				?>
 
-			<p>
-				<label for="">&nbsp;</label>
-				<button type="submit" name="submit">Save</button>
-			</p>
+				<p>
+					<label for="">&nbsp;</label>
+					<button type="submit" name="submit">Save</button>
+				</p>
 
-		</form>
+			</form>
 
 
 
+		</div>
 	</main>
+	<script src="js/sidebar.js"></script>
+
 </body>
 
 </html>

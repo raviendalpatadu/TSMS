@@ -2,10 +2,62 @@
 	margin: 0;
 }
 
-body {
+body,html	 {
 	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 	font-size: 16px;
+	height: 100%;
 }
+a{
+	text-decoration: none;
+}
+
+.sidebar {
+    width: 200px;
+    height: 100%;
+    background-color: #ccc;
+    float: left;
+	border-top: 1px solid rgba(0,0,0,0.3);
+}
+.content {
+    margin-left: 220px;
+    padding: 10px;
+}
+
+/* Style the links in the sidebar */
+.sidebar a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+}
+
+/* Style the active link in the sidebar */
+.sidebar a.active {
+    font-weight: bold;
+}
+
+.sidebar ul{
+	display: contents;
+    font-size: 1.2rem;
+}
+.sidebar ul li{
+	padding: 1rem;
+	border-bottom: 1px solid #aaa;
+}
+.sidebar ul li:hover{
+	background-color: white;
+}
+
+/* Hide the sidebar on small screens */
+@media only screen and (max-width: 600px) {
+    .sidebar {
+        display: none;
+    }
+    .content {
+        margin-left: 0;
+    }
+}
+
+
 
 .login {
 	width: 350px;
@@ -51,7 +103,7 @@ button {
 }
 
 header {
-	background: #eee;
+	background: #ccc;
 	overflow: auto;
 	padding: 10px;
 }
@@ -66,8 +118,7 @@ header .loggedin {
 }
 
 main {
-	width: 1000px;
-	margin: 30px auto;
+	margin : 1rem 0rem 0rem 1rem
 }
 
 main h1 {

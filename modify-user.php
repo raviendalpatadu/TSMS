@@ -31,11 +31,11 @@ if (isset($_GET['user_id'])) {
 			$user_type = $result['type'];
 		} else {
 			// user not found
-			header('Location: users.php?err=user_not_found');
+			header('Location: dashboard.php?err=user_not_found');
 		}
 	} else {
 		// query unsuccessful
-		header('Location: users.php?err=query_failed');
+		header('Location: dashboard.php?err=query_failed');
 	}
 }
 
@@ -87,7 +87,7 @@ if (isset($_POST['submit'])) {
 
 		if ($result) {
 			// query successful... redirecting to users page
-			header('Location: users.php?user_modified=true');
+			header('Location: dashboard.php?user_modified=true');
 		} else {
 			$errors[] = 'Failed to modify the record.';
 		}
@@ -111,58 +111,66 @@ if (isset($_POST['submit'])) {
 		<div class="appname">Technical Support Management System</div>
 		<div class="loggedin">Welcome <?php echo $_SESSION['first_name']; ?>! <a href="logout.php">Log Out</a></div>
 	</header>
-
+	<?php display_sidebar($_SESSION['type']); ?>
 	<main>
-		<h1>View / Modify User<span> <a href="users.php">
-					< Back to User List</a></span></h1>
+		<div class="content">
+			<h1>View / Modify User<span> <a href="dashboard.php">
+						< Back to User List</a></span></h1>
 
-		<?php
+			<?php
 
-		if (!empty($errors)) {
-			display_errors($errors);
-		}
+			if (!empty($errors)) {
+				display_errors($errors);
+			}
 
-		?>
+			?>
 
-		<form action="modify-user.php" method="post" class="userform">
-			<input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
-			<p>
-				<label for="">First Name:</label>
-				<input type="text" name="first_name" <?php echo 'value="' . $first_name . '"'; ?>>
-			</p>
+			<form action="modify-user.php" method="post" class="userform">
+				<input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+				<p>
+					<label for="">First Name:</label>
+					<input type="text" name="first_name" <?php echo 'value="' . $first_name . '"'; ?>>
+				</p>
 
-			<p>
-				<label for="">Last Name:</label>
-				<input type="text" name="last_name" <?php echo 'value="' . $last_name . '"'; ?>>
-			</p>
+				<p>
+					<label for="">Last Name:</label>
+					<input type="text" name="last_name" <?php echo 'value="' . $last_name . '"'; ?>>
+				</p>
 
-			<p>
-				<label for="">Email Address:</label>
-				<input type="text" name="email" <?php echo 'value="' . $email . '"'; ?>>
-			</p>
+				<p>
+					<label for="">Email Address:</label>
+					<input type="text" name="email" <?php echo 'value="' . $email . '"'; ?>>
+				</p>
 
-			<p>
-				<label for="">User Type:</label>
-				<!-- only admins can change user account types -->
-				<select name="user_type" <?php if($_SESSION['type'] != "admin") { echo "disabled";}?>>
-					<option value="admin" <?php if($user_type == "admin") { echo "selected";}?>>Admin</option> 
-					<option value="staff" <?php if($user_type == "staff") { echo "selected";}?>>Staff</option>
-					<option value="user" <?php if($user_type == "user") { echo "selected";}?>>User</option>
-				</select>
-			</p>
-			<p>
-				<label for="">Password:</label>
-				<span>******</span> | <a href="change-password.php?user_id=<?php echo $user_id; ?>">Change Password</a>
-			</p>
+				<p>
+					<label for="">User Type:</label>
+					<!-- only admins can change user account types -->
+					<select name="user_type" <?php if ($_SESSION['type'] != "admin") {
+													echo "disabled";
+												} ?>>
+						<option value="admin" <?php if ($user_type == "admin") {
+													echo "selected";
+												} ?>>Admin</option>
+						<option value="staff" <?php if ($user_type == "staff") {
+													echo "selected";
+												} ?>>Staff</option>
+						<option value="user" <?php if ($user_type == "user") {
+													echo "selected";
+												} ?>>User</option>
+					</select>
+				</p>
+				<p>
+					<label for="">Password:</label>
+					<span>******</span> | <a href="change-password.php?user_id=<?php echo $user_id; ?>">Change Password</a>
+				</p>
 
-			<p>
-				<label for="">&nbsp;</label>
-				<button type="submit" name="submit">Save</button>
-			</p>
+				<p>
+					<label for="">&nbsp;</label>
+					<button type="submit" name="submit">Save</button>
+				</p>
 
-		</form>
-
-
+			</form>
+		</div>
 
 	</main>
 </body>

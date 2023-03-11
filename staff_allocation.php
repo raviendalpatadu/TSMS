@@ -42,7 +42,7 @@ while ($user = mysqli_fetch_assoc($users)) {
 	<?php display_sidebar($_SESSION['type']); ?>
 	<main>
 		<div class="content">
-			<h1>Users</h1>
+			<h1>Staff Allocation</h1>
 
 			<table class="masterlist">
 				<tr>

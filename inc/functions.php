@@ -1,4 +1,17 @@
 <?php
+	function display_sidebar($user_type){
+		if(strtolower($user_type) == 'admin'){
+			echo '<div class="sidebar">
+					<ul>
+						<li><a href="dashboard.php">Dashboard</a></li>
+						<li><a href="add-user.php">Add Users</a></li>
+						<li><a href="users.php">Users</a></li>
+						<li><a href="staff.php">Staff</a></li>
+						<li><a href="staff_allocation.php">Staff Allocation</a></li>
+					</ul>
+				</div>';
+		}
+	}
 
 	function verify_query($result_set) {
 
@@ -15,7 +28,7 @@
 		$errors = array();
 		
 		foreach ($req_fields as $field) {
-			if (empty(trim($_POST[$field]))) {
+			if(empty(trim($_POST[$field]))) {
 				$errors[] = $field . ' is required';
 			}
 		}
