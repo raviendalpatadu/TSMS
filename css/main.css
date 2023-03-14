@@ -1,166 +1,360 @@
 * {
-	margin: 0;
+  margin: 0;
 }
 
-body,html	 {
-	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-	font-size: 16px;
-	height: 100%;
+body,
+html {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 16px;
+  height: 100%;
+  overflow: hidden;
+  background-image: url(../img/doodle.png);
 }
-a{
-	text-decoration: none;
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+}
+
+.col-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover{
+  text-decoration: none;
+  color: rgb(80, 80, 80);
+}
+
+.mb-1 {
+  margin-bottom: 2rem;
 }
 
 .sidebar {
-    width: 200px;
-    height: 100%;
-    background-color: #ccc;
-    float: left;
-	border-top: 1px solid rgba(0,0,0,0.3);
+  width: 200px;
+  height: 100%;
+  background-color: #ccc;
+  float: left;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
 }
 .content {
-    margin-left: 220px;
-    padding: 10px;
+  padding: 10px;
+  margin-left: 15%;
 }
 
 /* Style the links in the sidebar */
 .sidebar a {
-    display: block;
-    color: #333;
-    text-decoration: none;
+  display: block;
+  color: #333;
+  text-decoration: none;
 }
 
 /* Style the active link in the sidebar */
 .sidebar a.active {
-    font-weight: bold;
+  font-weight: bold;
 }
 
-.sidebar ul{
-	display: contents;
-    font-size: 1.2rem;
+.sidebar ul {
+  display: contents;
+  font-size: 1.2rem;
 }
-.sidebar ul li{
-	padding: 1rem;
-	border-bottom: 1px solid #aaa;
+.sidebar ul li {
+  padding: 1rem;
+  border-bottom: 1px solid #aaa;
 }
-.sidebar ul li:hover{
-	background-color: white;
+.sidebar ul li:hover {
+  background-color: white;
+}
+
+.sidebar .logo {
+  height: 4rem;
+  margin: 0.5rem;
+  margin-bottom: 4rem;
+}
+
+.sidebar .user-info {
+  display: flex;
+  margin: 0 1rem 2rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+.sidebar div.img-sidebar {
+  margin-right: 0.8rem;
+}
+.sidebar img.user {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 100%;
 }
 
 /* Hide the sidebar on small screens */
 @media only screen and (max-width: 600px) {
-    .sidebar {
-        display: none;
-    }
-    .content {
-        margin-left: 0;
-    }
+  .sidebar {
+    display: none;
+  }
+  .content {
+    margin-left: 0;
+  }
+}
+
+.login {
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.login div.login-img{
+  height: 100%;
+  width: 44%;
+}
+
+.login div.login-img img{
+  height: 100%;
+}
+
+.img-gradient {
+  position:relative;
+}
+
+.img-gradient::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(rgb(244 244 244 / 0%),rgba(0, 0, 0, 0.7));
+}
+
+.login div.login-form {
+  display: flex;
+  width: 57%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+div.login-form img{
+  height: 6rem;
+  margin-bottom: 1.5rem;
 }
 
 
+div.login-form form h1{
+  text-align: center;
+  margin-bottom: 2rem;
+}
 
-.login {
-	width: 350px;
-	margin: 100px auto;
+div.login-form form input{
+  border: 1px solid black;
+  border-radius: 10px;
+  
+
+}
+button{
+    background-color: #ccc;
+    border: 1px solid black;
+    border-radius: 10px;
+    transition: 0.3s linear;
+}
+button:hover{
+    background-color: #00c3ff77;
+    font-weight: bold;
+    border-radius: 10px;
 }
 
 p {
-	margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 div.errmsg {
-	color: red;
+  color: red;
 }
 
 p.error {
-	background: red;
-	color: white;
-	padding: 10px;
+  background: red;
+  color: white;
+  padding: 10px;
 }
 
 p.info {
-	background: green;
-	color: white;
-	padding: 10px;
+  background: green;
+  color: white;
+  padding: 10px;
 }
 
-input, select {
-	display: block;
-	width: 100%;
-	padding: 5px;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	font-size: 14px;
+input,
+select {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 14px;
 }
 
 button {
-	width: 100%;
-	padding: 5px;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+  width: 100%;
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 header {
-	background: #ccc;
-	overflow: auto;
-	padding: 10px;
+  background: #ccc;
+  overflow: auto;
+  padding: 10px;
 }
 
 header .appname {
-	float: left;
-
+  float: left;
 }
 
 header .loggedin {
-	float: right;
+  float: right;
+}
+header .loggedin ul li {
+  display: inline;
+  margin-left: 1rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2px;
+  background-color: #ccc;
+  color: rgb(0, 0, 0);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+footer p {
+  margin-top: 10px;
+}
+
+.chip {
+  display: inline-block;
+  padding: 0 20px;
+  height: 40px;
+  font-size: 16px;
+  line-height: 40px;
+  border-radius: 25px;
+  background-color: #aaa;
+}
+
+.chip img {
+  float: left;
+  margin: 0 10px 0 -25px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
 }
 
 main {
-	margin : 1rem 0rem 0rem 1rem
+  margin: 1rem 0rem 0rem 1rem;
+  width: 100%;
 }
 
 main h1 {
-	margin-bottom: 20px;
-	font-size: 50px;
+  margin-bottom: 20px;
+  font-size: 50px;
 }
 
 main h1 span {
-	font-size: 20px;
+  font-size: 20px;
 }
 
 table.masterlist {
-	width: 100%;
-	border-collapse: collapse;
+  width: 100%;
+  border-collapse: collapse;
 }
 
 table.masterlist th {
-	background: #aaa;
-	text-align: left;
+  background: #aaa;
+  text-align: left;
 }
 
-table.masterlist th, table.masterlist td {
-	padding: 10px;
-	border-bottom: 1px solid #aaa;
+table.masterlist th,
+table.masterlist td {
+  padding: 10px;
+  border-bottom: 1px solid #aaa;
 }
 
 form.userform label {
-	width: 30%;
-	float: left;
+  width: 30%;
+  float: left;
 }
 
 form.userform input {
-	width: 60%;
+  width: 60%;
 }
 form.userform select {
-	width: 60%;
+  width: 60%;
+}
+form.userform textarea {
+  width: 60%;
 }
 
 form.userform button {
-	width: 200px;
+  width: 200px;
 }
 
 .errmsg {
-	margin: 20px 0;
+  margin: 20px 0;
+}
+
+/* cards */
+
+.card-group {
+  display: inline-flex;
+  margin-left: 5rem;
+}
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 15rem;
+  height: 10rem;
+  margin-right: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+}
+
+.card p {
+  text-align: center;
+  font-size: 1.5rem;
+}
+.card h1 {
+  margin-bottom: 0;
+  text-align: center;
+  font-size: 2.7rem;
+}
+
+.card-user-width {
+  width: 30rem;
 }

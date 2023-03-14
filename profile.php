@@ -3,7 +3,7 @@
 <?php require_once('inc/functions.php'); ?>
 <?php
 // checking if a user is logged in
-if (!isset($_SESSION['user_id']) ) {
+if (!isset($_SESSION['user_id'])) {
 	header('Location: index.php');
 }
 
@@ -14,9 +14,9 @@ $last_name = '';
 $email = '';
 $user_type = '';
 
-if (isset($_GET['user_id'])) {
+if (isset($_SESSION['user_id'])) {
 	// getting the user information
-	$user_id = mysqli_real_escape_string($connection, $_GET['user_id']);
+	$user_id = mysqli_real_escape_string($connection, $_SESSION['user_id']); // not really needed
 	$query = "SELECT * FROM tbl_user WHERE id = {$user_id} LIMIT 1";
 
 	$result_set = mysqli_query($connection, $query);
@@ -89,7 +89,7 @@ if (isset($_POST['submit'])) {
 
 		if ($result) {
 			// query successful... redirecting to users page
-			header('Location: dashboard.php?user_modified=true');
+			header("location: profile.php?user_modified=true");
 		} else {
 			$errors[] = 'Failed to modify the record.';
 		}
@@ -114,18 +114,21 @@ if (isset($_POST['submit'])) {
 	<?php display_header(); ?>
 	<main>
 		<div class="content">
-			<h1>View / Modify User</h1>
-
+			<h1>User Profile</h1>
 			<?php
 
 			if (!empty($errors)) {
 				display_errors($errors);
 			}
 
+			if (isset($_GET['user_modified']) && $_GET['user_modified'] == 'true') {
+				echo 'modifed';
+			}
+
 			?>
 
-			<form action="modify-user.php" method="post" class="userform">
-				<input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+			<form action="profile.php" method="post" class="userform">
+				<input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
 				<p>
 					<label for="">First Name:</label>
 					<input type="text" name="first_name" <?php echo 'value="' . $first_name . '"'; ?>>
@@ -143,20 +146,8 @@ if (isset($_POST['submit'])) {
 
 				<p>
 					<label for="">User Type:</label>
-					<!-- only admins can change user account types -->
-					<select name="user_type" <?php if ($_SESSION['type'] != "admin") {
-													echo "disabled";
-												} ?>>
-						<option value="admin" <?php if ($user_type == "admin") {
-													echo "selected";
-												} ?>>Admin</option>
-						<option value="staff" <?php if ($user_type == "staff") {
-													echo "selected";
-												} ?>>Staff</option>
-						<option value="user" <?php if ($user_type == "user") {
-													echo "selected";
-												} ?>>User</option>
-					</select>
+					<input type="text" id="userType" name="user_type" <?php echo 'value="' . $user_type . '"'; ?> readonly>
+					
 				</p>
 				<p>
 					<label for="">Password:</label>

@@ -82,13 +82,13 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-	<header>
-		<div class="appname">Technical Support Management System</div>
-		<?php if (isset($_SESSION['user_id'])) {
-			echo '<div class="loggedin">Welcome ' . $_SESSION['first_name'] . '! <a href="logout.php">Log Out</a></div>';
-		} ?>
-	</header>
-	<?php display_sidebar($_SESSION['type']); ?>
+	
+	<?php 
+	if(isset($_SESSION['type'])){
+		display_sidebar($_SESSION['type']); 
+	}
+	?>
+	<?php display_header(); ?>
 	<main>
 		<div class="content">
 			<h1>Add New User</h1>
@@ -152,6 +152,9 @@ if (isset($_POST['submit'])) {
 	</main>
 	<script src="js/sidebar.js"></script>
 
+<?php display_footer(); ?>
 </body>
+
+
 
 </html>

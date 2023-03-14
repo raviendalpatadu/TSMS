@@ -62,7 +62,11 @@ if (isset($_POST['submit'])) {
 
 		if ($result) {
 			// query successful... redirecting to users page
-			header('Location: modify-user.php?user_id='.$user_id.'&user_modified=true');
+			if ($_POST['user_id'] == $_SESSION['user_id']) {
+				header("location: profile.php?user_id={$_SESSION['user_id']}");
+			}else{
+				header("location: modify-user.php?user_id={$user_id}");
+			}
 		} else {
 			$errors[] = 'Failed to update the password.';
 		}
@@ -82,12 +86,8 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-	<header>
-		<div class="appname">Technical Support Management System</div>
-		<div class="loggedin">Welcome <?php echo $_SESSION['first_name']; ?>! <a href="logout.php">Log Out</a></div>
-	</header>
-
 	<?php display_sidebar($_SESSION['type']); ?>
+	<?php display_header(); ?>
 
 	<main>
 		<div class="content">
@@ -138,16 +138,11 @@ if (isset($_POST['submit'])) {
 	</main>
 	<script src="js/jquery.js"></script>
 	<script>
-		$(document).ready(function() {
-			$('#showpassword').click(function() {
-				if ($('#showpassword').is(':checked')) {
-					$('#password').attr('type', 'text');
-				} else {
-					$('#password').attr('type', 'password');
-				}
-			});
-		});
+		// show password js script
 	</script>
+<?php display_footer(); ?>
 </body>
+
+
 
 </html>

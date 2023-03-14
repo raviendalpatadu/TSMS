@@ -35,11 +35,9 @@ while ($user = mysqli_fetch_assoc($users)) {
 </head>
 
 <body>
-	<header>
-		<div class="appname">Technical Support Management System</div>
-		<div class="loggedin">Welcome <?php echo $_SESSION['first_name']; ?>! <a href="logout.php">Log Out</a></div>
-	</header>
+	
 	<?php display_sidebar($_SESSION['type']); ?>
+	<?php display_header(); ?>
 	<main>
 		<div class="content">
 			<h1>Staff</h1>
@@ -59,6 +57,9 @@ while ($user = mysqli_fetch_assoc($users)) {
 		</div>
 
 	</main>
+<?php display_footer(); ?>
 </body>
+
+
 
 </html>

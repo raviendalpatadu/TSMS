@@ -2,6 +2,8 @@
 <?php require_once('inc/connection.php'); ?>
 <?php require_once('inc/functions.php'); ?>
 <?php
+
+
 // checking if a user is logged in
 if (!isset($_SESSION['user_id'])) {
 	header('Location: index.php');
@@ -35,11 +37,9 @@ while ($user = mysqli_fetch_assoc($users)) {
 </head>
 
 <body>
-	<header>
-		<div class="appname">Technical Support Management System</div>
-		<div class="loggedin">Welcome <?php echo $_SESSION['first_name']; ?>! <a href="logout.php">Log Out</a></div>
-	</header>
+	
 	<?php display_sidebar($_SESSION['type']); ?>
+	<?php display_header(); ?>
 	<main>
 		<div class="content">
 			<h1>Users</h1>
@@ -59,6 +59,9 @@ while ($user = mysqli_fetch_assoc($users)) {
 		</div>
 
 	</main>
+<?php display_footer(); ?>
 </body>
+
+
 
 </html>
