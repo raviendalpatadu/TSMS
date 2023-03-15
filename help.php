@@ -33,27 +33,40 @@
                     <h1><span class="brand-name">HELP</span></h1>
                 </div>
                 <div>
-                    <button type="button" class="collapsible">Help Item</button>
+                    <button type="button" class="collapsible">Create User Account
+                        <span style="float:right;">+</span>
+                    </button>
                     <div class="content">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, voluptatibus? Corrupti, quas cum sapiente exercitationem deleniti quibusdam quod alias voluptas saepe consequatur voluptatibus nisi quidem rerum id quia reprehenderit error.</p>
+                        <p>To create an account, first, click on the <b><i>"Login"</i></b> button, then find and click on the <b><i>"Create Account"</i></b> or <b><i>"Make Account"</i></b> link. Next, fill out the required fields in the form with your personal information.
+                            Finally, click the <b><i>"Save"</i></b> button to complete the account creation process.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <button type="button" class="collapsible">Create Staff Account
+                        <span style="float:right;">+</span>
+                    </button>
+                    <div class="content">
+                        <p>Login to the platform as an <b><i>admin user</i></b>, click on <b><i>"Add User"</i></b>, and fill out the user creation form with the required details.
+                            Then, select <b><i>"Staff"</i></b> as the user type from the available options and click on <b><i>"Save"</i></b> to complete the process.
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <button type="button" class="collapsible">Create Inquiry
+                        <span style="float:right;">+</span>
+                    </button>
+                    <div class="content">
+                        <p>To create an inquiry, log in with your <b><i>user account</i></b> and click on <b><i>"Create Inquiry"</i></b>. Fill out the given form with the necessary details and click on <b><i>"Save"</i></b> to submit your inquiry.</p>
                     </div>
                 </div>
                 <div>
-                    <button type="button" class="collapsible">Help Item</button>
+                    <button type="button" class="collapsible">View Inquiry
+                        <span style="float:right;">+</span>
+                    </button>
                     <div class="content">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, voluptatibus? Corrupti, quas cum sapiente exercitationem deleniti quibusdam quod alias voluptas saepe consequatur voluptatibus nisi quidem rerum id quia reprehenderit error.</p>
-                    </div>
-                </div>
-                <div>
-                    <button type="button" class="collapsible">Help Item</button>
-                    <div class="content">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, voluptatibus? Corrupti, quas cum sapiente exercitationem deleniti quibusdam quod alias voluptas saepe consequatur voluptatibus nisi quidem rerum id quia reprehenderit error.</p>
-                    </div>
-                </div>
-                <div>
-                    <button type="button" class="collapsible">Help Item</button>
-                    <div class="content">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, voluptatibus? Corrupti, quas cum sapiente exercitationem deleniti quibusdam quod alias voluptas saepe consequatur voluptatibus nisi quidem rerum id quia reprehenderit error.</p>
+                        <p>To view an inquiry, log in with your <b><i>user account</i></b> and click on <b><i>"Your Inquiries"</i></b>. All inquiries and status of your inquiries will be listed below.</p>
                     </div>
                 </div>
             </div>

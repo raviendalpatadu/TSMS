@@ -86,9 +86,9 @@ if (isset($_POST['submit'])) {
 				<p>
 					<label for="">Inquiry Type:</label>
 					<select name="inquiry_type">
-						<option value="type1">type1</option>
-						<option value="type2">type2</option>
-						<option value="type3">type3</option>
+						<option value="High Priorty">High Priorty</option>
+						<option value="Medium Priorty">Medium Priorty</option>
+						<option value="Low Priorty">Low Priorty</option>
 					</select>
 				</p>
 
