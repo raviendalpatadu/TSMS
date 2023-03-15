@@ -6,7 +6,7 @@
 
 if (isset($_GET['user_id'])) {
 	$id = $_GET['user_id'];
-	$query = "DELETE FROM tbl_user WHERE id = {$id} LIMIT 1";
+	$query = "UPDATE tbl_user SET is_deleted = 1 WHERE id={$id} LIMIT 1 ";
 	$result_set = mysqli_query($connection, $query);
 	verify_query($result_set);
 	if ($result_set) {

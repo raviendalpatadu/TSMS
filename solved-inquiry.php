@@ -4,7 +4,7 @@
 <?php
 // checking if a user is logged in
 if (!isset($_SESSION['user_id']) && $_SESSION['type'] != 'staff') {
-	header('Location: index.php');
+	header('Location: login.php');
 }
 
 $errors = array();

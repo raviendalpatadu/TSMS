@@ -4,7 +4,7 @@
 <?php
 // checking if a user is logged in
 if (!isset($_SESSION['user_id'])) {
-	header('Location: index.php');
+	header('Location: login.php');
 }
 
 $inquiry_list = '';
@@ -38,7 +38,7 @@ if ($_SESSION['type'] == 'user') {
 
 // getting the list of inquries of the staff
 if ($_SESSION['type'] == 'staff') {
-	
+
 	$query = "SELECT tbl_inquiry.inquiry_id, tbl_user.first_name as user_name,  tbl_inquiry.inquiry_type, tbl_inquiry.inquiry_date, tbl_inquiry.inquiry_description ";
 	$query .= "FROM tbl_inquiry ";
 	$query .= "JOIN tbl_user ON ";
@@ -104,27 +104,27 @@ if ($_SESSION['type'] == 'admin') {
 			<h1>Inquries</h1>
 
 			<table class="masterlist">
-				<?php 
-					if ($_SESSION['type'] ==  "admin") {
-						echo "<tr>
+				<?php
+				if ($_SESSION['type'] ==  "admin") {
+					echo "<tr>
 							<th>Inqury Type</th>
 							<th>User Name</th>
 							<th>Staff Member Name</th>
 							<th>Inqury Status</th>
 							<th>More</th>	
 						</tr>";
-					}
-					if ($_SESSION['type'] ==  "staff") {
-						echo "<tr>
+				}
+				if ($_SESSION['type'] ==  "staff") {
+					echo "<tr>
 							<th>User Name</th>
 							<th>Inqury Type</th>
 							<th>Inquiry Description</th>
 							<th>Inqurry date</th>
 							<th>Accept</th>	
 						</tr>";
-					}
-					if ($_SESSION['type'] ==  "user") {
-						echo "<tr>
+				}
+				if ($_SESSION['type'] ==  "user") {
+					echo "<tr>
 							<th>Staff Name</th>
 							<th>Inquiry Type</th>
 							<th>Inquiry Description</th>
@@ -132,7 +132,7 @@ if ($_SESSION['type'] == 'admin') {
 							<th>Inqurry Status</th>
 							<th>More</th>	
 						</tr>";
-					}
+				}
 				?>
 
 				<?php echo $inquiry_list; ?>
@@ -141,7 +141,7 @@ if ($_SESSION['type'] == 'admin') {
 		</div>
 
 	</main>
-<?php display_footer(); ?>
+	<?php display_footer(); ?>
 </body>
 
 

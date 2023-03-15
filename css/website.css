@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&family=Varela+Round&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+}
+
+body,
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: #fff;
+  height: 100%;
+  overflow: hidden;
+  background-image: url(../img/home/bg-1.png);
+  background-size: cover;
+}
+
+body.about{
+  background-image: url(../img/home/bg-2.png);
+}
+
+main {
+  height: 100%;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+}
+
+.col-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  font-weight:500;
+  text-decoration: none;
+  color: #fff;
+  text-shadow: 3px 2px 3px rgb(0, 0, 0);
+  transition: all 0.3s ease 0s;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #cbb762;
+}
+
+header {
+    font-size: 1.2rem;
+    position: absolute;
+    background: transparent;
+    width: 100%;
+    right: 0;
+}
+
+header .appname {
+  float: left;
+  margin-left: 4rem;
+  padding:0 1rem;
+}
+
+header .appname img{
+  height:4rem;
+}
+
+header .loggedin {
+  float: right;
+  padding: 1rem;
+}
+header .loggedin ul li {
+  display: inline;
+  margin-left: 1rem;
+}
+
+header .loggedin ul li{
+  /* you can change these variables to control the border */
+  --border-color: #ffee01;
+  --border-width: 3px;
+  --bottom-distance: 0px;
+  
+  color: #666;
+  display: inline-block;
+  background-image: linear-gradient(var(--border-color), var(--border-color));
+  background-size: 0% var(--border-width);
+  background-repeat: no-repeat;
+  transition: background-size 0.3s;
+  margin: 0 1rem;
+}
+
+.fromCenter {
+  background-position: 50% calc(100% - var(--bottom-distance));
+}
+header .loggedin ul li:hover {
+  background-size: 100% var(--border-width);
+}
+
+
+footer {
+  text-align: center;
+  padding: 2px;
+  background-color: transparent;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+footer p {
+  margin-top: 10px;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  background-image: linear-gradient(-120deg, #2391ff, transparent);
+}
+
+body.about .container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  background-image: linear-gradient(143deg, #2391ff, transparent);
+}
+
+.container div h1 {
+  text-align: center;
+  margin: 0 1rem 2rem;
+  font-size: 3rem;
+}
+.container div h2 {
+  margin: 0 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 200;
+  text-shadow: 2px 2px 1px rgb(0, 0, 0);
+}
+
+.container div p {
+  margin: 0 1rem;
+  font-size: 1.3rem;
+  font-weight: 100;
+}
+.container div ul {
+  margin: 0 1rem;
+  font-size: 1.3rem;
+  font-weight: 100;
+}
+
+.container .row-home {
+  display: flex;
+  width: 50%;
+  margin: auto;
+  flex-direction: column;
+  text-align: justify;
+  padding: 4rem;
+}
+
+span.brand-name {
+  font-size: 4.5rem;
+  -webkit-text-stroke: 1px white;
+  -webkit-text-fill-color: transparent;
+  transition:  0.3s ease 0s;
+
+}
+span.brand-name:hover {
+  -webkit-text-stroke: 1px white;
+  -webkit-text-fill-color: #2391ff;
+}
+
+/* collapsible  */
+.collapsible {
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  padding: 15px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 1.2rem;
+  border-bottom: 1px solid white;
+  transition: all 0.3s ease-in;
+}
+
+
+.active, .collapsible:hover {
+  background-color: #2391ff;
+}
+
+
+.content {
+  padding: 0 18px;
+  background-color: transparent;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}

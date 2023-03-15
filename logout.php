@@ -11,6 +11,6 @@
 	session_destroy();
 
 	// redirecting the user to the login page
-	header('Location: index.php?logout=yes');
+	header('Location: login.php?logout=yes');
 
  ?>

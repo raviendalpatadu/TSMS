@@ -3,6 +3,10 @@
 <?php require_once('inc/functions.php'); ?>
 <?php
 
+// checking if a user is logged in
+if (!isset($_SESSION['user_id'])) {
+	header('Location: login.php');
+}
 
 $errors = array();
 $user_id = $_SESSION['user_id'];
@@ -59,9 +63,9 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-	<?php 
-	if(isset($_SESSION['type'])){
-		display_sidebar($_SESSION['type']); 
+	<?php
+	if (isset($_SESSION['type'])) {
+		display_sidebar($_SESSION['type']);
 	}
 	?>
 	<?php display_header(); ?>
@@ -82,15 +86,15 @@ if (isset($_POST['submit'])) {
 				<p>
 					<label for="">Inquiry Type:</label>
 					<select name="inquiry_type">
-									<option value="type1">type1</option> 
-									<option value="type2">type2</option> 
-									<option value="type3">type3</option>
+						<option value="type1">type1</option>
+						<option value="type2">type2</option>
+						<option value="type3">type3</option>
 					</select>
 				</p>
 
 				<p>
 					<label for="">Inquiry Description:</label>
-					<textarea type="text" name="inquiry_description" <?php echo 'value="' . $inquiry_description . '"'; ?> >
+					<textarea type="text" name="inquiry_description" <?php echo 'value="' . $inquiry_description . '"'; ?>>
 					</textarea>
 				</p>
 
@@ -105,7 +109,7 @@ if (isset($_POST['submit'])) {
 	</main>
 	<script src="js/sidebar.js"></script>
 
-<?php display_footer(); ?>
+	<?php display_footer(); ?>
 </body>
 
 

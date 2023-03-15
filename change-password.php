@@ -4,7 +4,7 @@
 <?php
 // checking if a user is logged in
 if (!isset($_SESSION['user_id'])) {
-	header('Location: index.php');
+	header('Location: login.php');
 }
 
 $errors = array();
@@ -64,7 +64,7 @@ if (isset($_POST['submit'])) {
 			// query successful... redirecting to users page
 			if ($_POST['user_id'] == $_SESSION['user_id']) {
 				header("location: profile.php?user_id={$_SESSION['user_id']}");
-			}else{
+			} else {
 				header("location: modify-user.php?user_id={$user_id}");
 			}
 		} else {
@@ -125,7 +125,7 @@ if (isset($_POST['submit'])) {
 
 				<p>
 					<label for="">Show Password:</label>
-					<input type="checkbox" name="showpassword" id="showpassword" style="width:20px;height:20px">
+					<input type="checkbox" name="showpassword" id="showpassword" onclick="showPassword()" style="width:20px;height:20px">
 				</p>
 
 				<p>
@@ -136,11 +136,19 @@ if (isset($_POST['submit'])) {
 			</form>
 		</div>
 	</main>
-	<script src="js/jquery.js"></script>
+
 	<script>
 		// show password js script
+		function showPassword() {
+			var x = document.getElementById("password");
+			if (x.type === "password") {
+				x.type = "text";
+			} else {
+				x.type = "password";
+			}
+		}
 	</script>
-<?php display_footer(); ?>
+	<?php display_footer(); ?>
 </body>
 
 

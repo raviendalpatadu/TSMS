@@ -4,7 +4,11 @@
 <?php
 // checking if a user is logged in
 if (!isset($_SESSION['user_id'])  || $_SESSION['type'] != 'admin') {
-	header('Location: index.php');
+	header('Location: login.php
+
+
+
+');
 }
 
 
@@ -62,37 +66,46 @@ $no_of_solved = $result_solved['no_of_solved'];
 			<h1>Dashboard</h1>
 
 			<div class="card-group">
-				<div class="card">
-					<div class="container">
-						<h1><b><?=$no_of_users?></b></h1>
-						<p>Users</p>
-					</div>
-				</div>
-				<div class="card">
-					<div class="container">
-						<h1><b><?=$no_of_staff?></b></h1>
-						<p>Staff</p>
-					</div>
-				</div>
+				<a href="./users.php">
 					<div class="card">
 						<div class="container">
-							<h1><b><?=$no_of_inquiries?></b></h1>
+							<h1><b><?= $no_of_users ?></b></h1>
+							<p>Users</p>
+						</div>
+					</div>
+				</a>
+
+				<a href="./staff.php">
+					<div class="card">
+						<div class="container">
+							<h1><b><?= $no_of_staff ?></b></h1>
+							<p>Staff</p>
+						</div>
+					</div>
+				</a>
+				<a href="./inquries.php">
+					<div class="card">
+						<div class="container">
+							<h1><b><?= $no_of_inquiries ?></b></h1>
 							<p>Inquires</p>
 						</div>
 					</div>
-	
-				<div class="card">
-					<div class="container">
-						<h1><b><?=$no_of_solved?></b></h1>
-						<p>Solved</p>
+				</a>
+
+				<a href="./inquries.php">
+					<div class="card">
+						<div class="container">
+							<h1><b><?= $no_of_solved ?></b></h1>
+							<p>Solved</p>
+						</div>
 					</div>
-				</div>
+				</a>
 			</div>
 		</div>
 	</main>
 	<script src="js/sidebar.js"></script>
 
-<?php display_footer(); ?>
+	<?php display_footer(); ?>
 </body>
 
 

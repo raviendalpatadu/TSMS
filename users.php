@@ -6,7 +6,7 @@
 
 // checking if a user is logged in
 if (!isset($_SESSION['user_id'])) {
-	header('Location: index.php');
+	header('Location: login.php');
 }
 
 $user_list = '';
