@@ -11,6 +11,11 @@ $status = '';
 
 
 if (isset($_POST['submit'])) {
+	// check if the username and password has been entered
+	if (!isset($_POST['username']) || strlen(trim($_POST['username'])) < 1) {
+		$errors[] = 'Username is Missing';
+	}
+
 
 	$username = mysqli_real_escape_string($connection, $_POST['username']);
 	$query = "SELECT * FROM tbl_user WHERE email = '{$username}'";
@@ -42,6 +47,9 @@ if (isset($_POST['submit'])) {
 			}
 		}
 
+	}
+	else{
+		$errors[] = "User Not Found";	
 	}
 }
 
