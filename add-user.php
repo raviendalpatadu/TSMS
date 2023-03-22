@@ -16,7 +16,13 @@ if (isset($_POST['submit'])) {
 	$last_name = $_POST['last_name'];
 	$email = $_POST['email'];
 	$password = $_POST['password'];
+	$confirm_password = $_POST['confirm_password'];
 	$user_type = $_POST['user_type'];
+
+	// check to passwords match
+	if ($confirm_password != $password){
+		$errors[] = 'Passwords doesn\'t match.';
+	}
 
 	// checking required fields
 	$req_fields = array('first_name', 'last_name', 'email', 'password', 'user_type');
@@ -49,6 +55,10 @@ if (isset($_POST['submit'])) {
 		$last_name = mysqli_real_escape_string($connection, $_POST['last_name']);
 		$user_type = mysqli_real_escape_string($connection, $_POST['user_type']);
 		$password = mysqli_real_escape_string($connection, $_POST['password']);
+		$confirm_password = mysqli_real_escape_string($connection, $_POST['confirm_password']);
+		
+		
+
 		// email address is already sanitized
 		$hashed_password = sha1($password);
 
@@ -100,7 +110,7 @@ if (isset($_POST['submit'])) {
 			}
 
 			?>
-
+	
 			<form action="add-user.php" method="post" class="userform">
 
 				<p>
@@ -119,8 +129,13 @@ if (isset($_POST['submit'])) {
 				</p>
 
 				<p>
-					<label for="">New Password:</label>
+					<label for="">Password:</label>
 					<input type="password" name="password">
+				</p>
+
+				<p>
+					<label for="">Confirm Password:</label>
+					<input type="password" name="confirm_password">
 				</p>
 
 
@@ -139,9 +154,12 @@ if (isset($_POST['submit'])) {
 				}
 				?>
 
+
 				<p>
 					<label for="">&nbsp;</label>
 					<button type="submit" name="submit">Save</button>
+				
+					<a href="./login.php" style="margin-left: 4rem;">Back</a>
 				</p>
 
 			</form>

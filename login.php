@@ -88,7 +88,9 @@ if (isset($_POST['submit'])) {
 
 				<?php
 				if (isset($errors) && !empty($errors)) {
-					echo '<p class="error">Invalid Username / Password</p>';
+					echo '<p class="error">Invalid Username / Password</p>
+						<p><a href="./forget-password.php">Forget Password?</a></p>
+					';
 				}
 				?>
 
