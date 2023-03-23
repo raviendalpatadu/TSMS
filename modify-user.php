@@ -104,7 +104,7 @@ if (isset($_POST['submit'])) {
 
 <head>
 	<meta charset="UTF-8">
-	<title>View / Modify User</title>
+	<title>Tech Support</title>
 	<link rel="stylesheet" href="css/main.css">
 </head>
 

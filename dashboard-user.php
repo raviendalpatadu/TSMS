@@ -30,7 +30,7 @@ $no_of_solved = $result_solved['no_of_solved'];
 <html>
 
 <head>
-	<title>Simple Sidebar Example</title>
+	<title>Tech Support</title>
 	<link rel="stylesheet" href="css/main.css">
 </head>
 

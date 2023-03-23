@@ -41,7 +41,7 @@
                         <li>Staff members can select what inquiries they are going to handle.</li>
                         <li>Admins have full control of the system.</li>
                         <li>Monitor inquiries and track resolution progress.</li>
-                        <li>High secturity with pass word encryption.</li>
+                        <li>High secturity with password encryption.</li>
                         <li>Form Validation.</li>
                     </ul>
                     <p>

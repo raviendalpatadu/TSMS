@@ -46,7 +46,7 @@ if ($_SESSION['type'] == 'staff') {
 
 <head>
 	<meta charset="UTF-8">
-	<title>Users</title>
+	<title>Tech Support</title>
 	<link rel="stylesheet" href="css/main.css">
 </head>
 

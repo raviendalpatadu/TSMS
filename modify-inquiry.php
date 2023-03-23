@@ -99,7 +99,7 @@ if (isset($_POST['submit']) && $_SESSION['type'] == 'user') {
 
 <head>
 	<meta charset="UTF-8">
-	<title>View / Modify inquiry</title>
+	<title>Tech Support</title>
 	<link rel="stylesheet" href="css/main.css">
 </head>
 

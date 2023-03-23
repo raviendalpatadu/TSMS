@@ -7,6 +7,7 @@ if (!isset($_SESSION['user_id'])) {
 	header('Location: login.php');
 }
 
+$errors = array();
 $inquiry_list = '';
 $query = '';
 
@@ -55,7 +56,20 @@ if ($_SESSION['type'] == 'staff') {
 	<main>
 		<div class="content">
 			<h1>Solved Inquries</h1>
+			<?php
 
+			if (!empty($errors)) {
+				display_errors($errors);
+			}
+
+			if (isset($_GET['email'])) {
+				if($_GET['email'] == 'false'){
+					echo '<p class="error">Failed to send notification</p>
+					';
+				}
+			}
+
+			?>
 			<table class="masterlist">
 				<?php 
 					if ($_SESSION['type'] ==  "staff") {

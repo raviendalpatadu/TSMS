@@ -32,7 +32,7 @@ while ($user = mysqli_fetch_assoc($users)) {
 
 <head>
 	<meta charset="UTF-8">
-	<title>Users</title>
+	<title>Tech Support</title>
 	<link rel="stylesheet" href="css/main.css">
 </head>
 
