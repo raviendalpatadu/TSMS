@@ -62,7 +62,7 @@ $no_of_solved = $result_solved['no_of_solved'];
 
 			<div class="row">
 				<div class="column col-center">
-					<a href="inquries.php">
+					<a href="add-inquiry.php">
 						<div class="card card-user-width">
 							<div class="container">
 								<h1><b>+</b></h1>
@@ -72,7 +72,7 @@ $no_of_solved = $result_solved['no_of_solved'];
 					</a>
 				</div>
 				<div class="column col-center">
-					<a href="add-inquiry.php">
+					<a href="inquries.php">
 						<div class="card card-user-width">
 							<div class="container">
 								<h1><b>?</b></h1>
