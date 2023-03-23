@@ -37,6 +37,7 @@
                         and improve the overall customer experience. With our system, you can:</p>
                     <ul>
                         <li>Keep track of all inquiries.</li>
+                        <li>Get notfied with emails about your inquiry status</li>
                         <li>Staff members can select what inquiries they are going to handle.</li>
                         <li>Admins have full control of the system.</li>
                         <li>Monitor inquiries and track resolution progress.</li>

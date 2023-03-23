@@ -33,7 +33,7 @@ if (isset($_POST['submit'])) {
 		if ($result_update) {
 			// send mail
 			$to	 		  = $username;
-			$mail_subject = 'TSMS Reset Password';
+			$mail_subject = 'TECH SUPPORT - Reset Password';
 			$email_body   = "Your new password will be 123. <br> login and change it imediatly.";
 
 			$header       = "From: {$username}\r\nContent-Type: text/html;";

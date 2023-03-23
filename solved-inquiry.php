@@ -23,9 +23,46 @@ if (isset($_GET['inquiry_id']) && $_SESSION['type'] == 'staff') {
 		$result = mysqli_query($connection, $query);
 		verify_query($result);
 
+
 		if ($result) {
-			// query successful... redirecting to inquirys page
-			header("Location: solved-inquries.php?inquiry_solved=true");
+			// query successful... 
+			// sending notification
+			$query = "SELECT tbl_inquiry.inquiry_id, tbl_user.email as user_name ";
+			$query .= "FROM tbl_inquiry ";
+			$query .= "JOIN tbl_user ON ";
+			$query .= "tbl_inquiry.user_fk = tbl_user.id ";
+			$query .= "LEFT JOIN tbl_user a ON ";
+			$query .= "tbl_inquiry.staff_fk = a.id ";
+			$query .= "WHERE tbl_inquiry.staff_fk = {$staff_id} AND tbl_inquiry.inquiry_id = {$inquiry_id}; ";
+	
+			$result_set = mysqli_query($connection, $query);
+			verify_query($result_set);
+	
+			if (mysqli_num_rows($result_set) == 1) {
+				// email address found sending mail.
+				$data = mysqli_fetch_assoc($result_set);
+				
+				$username = $data['user_name'];
+				$to	 		  = $username;
+				$mail_subject = 'TECH SUPPORT - Inquiry Solved';
+				$email_body   = "Your new inquriy({$inquiry_id}) has been Solved. <br> Thank you for using TECH SUPPORT.";
+		
+				$header       = "From: {$username}\r\nContent-Type: text/html;";
+		
+				$send_mail_result = mail($to, $mail_subject, $email_body, $header);
+		
+				if ($send_mail_result) {
+					
+					// redirecting to inquirys page
+					header("Location: solved-inquries.php?inquiry_solved=true&email=true");
+				} else {
+					$errors[] = 'Error: Message Was Not Sent.';
+					header("Location: solved-inquries.php?inquiry_solved=true&email=false");
+				}
+			}{
+				$errors[] = "couldnt find email address.";
+			}
+	
 		} else {
 			$errors[] = 'Failed to update status to solved.';
 		}
