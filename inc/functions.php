@@ -36,11 +36,17 @@ function display_sidebar($user_type)
 {
 	if (strtolower($user_type) == 'admin') {
 		echo '<div class="sidebar">
-					<div class="logo"><img src="img/logo.png" alt="logo" class="logo"/></div>
-					<div class="user-info">
-						<div class="img-sidebar">
-							<img src="img/user.jpg" alt="logo" class="user"/>
+		<a href="./index.php">
+		<div class="logo">
+						<img src="img/logo.png" alt="logo" class="logo"/>
 						</div>
+						</a>
+					<div class="user-info">
+						
+							<div class="img-sidebar">
+								<img src="img/user.jpg" alt="logo" class="user"/>
+							</div>
+						
 						<div class="user-content-sidebar">
 								Welcome <br> <h2>'.ucfirst($_SESSION['first_name']).'</h2>
 						</div>
@@ -57,7 +63,11 @@ function display_sidebar($user_type)
 	}
 	if (strtolower($user_type) == 'user') {
 		echo '<div class="sidebar">
-					<div class="logo"><img src="img/logo.png" alt="logo" class="logo"/></div>
+		<a href="./index.php">
+		<div class="logo">
+						<img src="img/logo.png" alt="logo" class="logo"/>
+						</div>
+						</a>
 					<div class="user-info">
 						<div class="img-sidebar">
 							<img src="img/user.jpg" alt="logo" class="user"/>
@@ -76,7 +86,11 @@ function display_sidebar($user_type)
 	}
 	if (strtolower($user_type) == 'staff') {
 		echo '<div class="sidebar">
-					<div class="logo"><img src="img/logo.png" alt="logo" class="logo"/></div>
+		<a href="./index.php">
+		<div class="logo">
+						<img src="img/logo.png" alt="logo" class="logo"/>
+						</div>
+						</a>
 					<div class="user-info">
 						<div class="img-sidebar">
 							<img src="img/user.jpg" alt="logo" class="user"/>

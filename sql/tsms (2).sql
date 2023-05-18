@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 23, 2023 at 12:55 PM
+-- Generation Time: May 18, 2023 at 05:21 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -42,7 +42,9 @@ CREATE TABLE `tbl_inquiry` (
 --
 
 INSERT INTO `tbl_inquiry` (`inquiry_id`, `user_fk`, `staff_fk`, `inquiry_type`, `inquiry_description`, `inquiry_date`, `inquiry_status`) VALUES
-(1, 1, NULL, 'High Priorty', 'phone not working. my contact no: 0718045455				', '2023-03-23 17:11:24', 'created');
+(2, 4, 2, 'high', 'dfsfdaf', '2023-03-26 20:33:18', 'solved'),
+(4, 4, 2, 'High Priorty', 'this is a testing entry			', '2023-05-18 19:41:37', 'Member Accepted'),
+(5, 4, 2, 'High Priorty', 'this is a testing entry		', '2023-05-18 19:48:23', 'Member Accepted');
 
 -- --------------------------------------------------------
 
@@ -66,9 +68,9 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`id`, `first_name`, `last_name`, `email`, `password`, `last_login`, `type`, `is_deleted`) VALUES
-(1, 'ravien', 'dalpatadu', 'dalpataduravien@gmail.com', 'ef245fbb4dd920d7eb3cdd92991c10e113398552', '2023-03-23 17:10:30', 'user', 0),
-(2, 'staff', 'staff account', 'staff@gmail.com', '6ccb4b7c39a6e77f76ecfa935a855c6c46ad5611', '2023-03-23 17:19:07', 'staff', 0),
-(3, 'ucsc', 'ucsc', 'ucsc@gmail.com', 'c0d0cb34565fe05ca2a14e8b13285bf6dbdf6dfc', '2023-03-23 17:16:23', 'admin', 0);
+(2, 'staff', 'staff account', 'staff@gmail.com', '6ccb4b7c39a6e77f76ecfa935a855c6c46ad5611', '2023-05-18 20:09:57', 'staff', 0),
+(3, 'ucsc', 'ucsc', 'ucsc@gmail.com', 'c0d0cb34565fe05ca2a14e8b13285bf6dbdf6dfc', '2023-05-18 20:14:05', 'admin', 0),
+(4, 'ravien', 'dalpatadu', 'dalpataduravien@gmail.com', 'ef245fbb4dd920d7eb3cdd92991c10e113398552', '2023-05-18 19:47:39', 'user', 0);
 
 --
 -- Indexes for dumped tables
@@ -96,13 +98,13 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_inquiry`
 --
 ALTER TABLE `tbl_inquiry`
-  MODIFY `inquiry_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `inquiry_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables

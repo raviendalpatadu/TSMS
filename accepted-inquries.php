@@ -3,7 +3,7 @@
 <?php require_once('inc/functions.php'); ?>
 <?php
 // checking if a user is logged in
-if (!isset($_SESSION['user_id'])) {
+if (!isset($_SESSION['user_id'] )) {
 	header('Location: login.php');
 }
 
@@ -14,7 +14,6 @@ $query = '';
 
 // getting the list of accepted inquries of the staff member
 if ($_SESSION['type'] == 'staff') {
-	// $query = "SELECT i.*, u.first_name as user_name FROM tbl_inquiry i, tbl_user u WHERE u.id = i.staff_fk AND i.staff_fk ={$_SESSION['user_id']} ORDER BY inquiry_type";
 	
 	$query = "SELECT tbl_inquiry.inquiry_id, tbl_user.first_name as user_name,  tbl_inquiry.inquiry_type, tbl_inquiry.inquiry_date, tbl_inquiry.inquiry_description ";
 	$query .= "FROM tbl_inquiry ";

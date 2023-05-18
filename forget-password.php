@@ -24,8 +24,11 @@ if (isset($_POST['submit'])) {
 
 	if (mysqli_num_rows($result) == 1) {
 		// username found
-
-		$password = sha1('123');
+		$length = 8;
+		$string = rand();
+    	$randomString = substr($string, 0, $length);
+		
+		$password = sha1($randomString);
 		$query_update = "UPDATE tbl_user SET password ='{$password}' WHERE email='{$username}' LIMIT 1";
 		$result_update = mysqli_query($connection, $query_update);
 		verify_query($result_update);
@@ -34,7 +37,7 @@ if (isset($_POST['submit'])) {
 			// send mail
 			$to	 		  = $username;
 			$mail_subject = 'TECH SUPPORT - Reset Password';
-			$email_body   = "Your new password will be 123. <br> login and change it imediatly.";
+			$email_body   = "Your new password will be {$randomString}. <br> login and change it imediatly.";
 
 			$header       = "From: {$username}\r\nContent-Type: text/html;";
 

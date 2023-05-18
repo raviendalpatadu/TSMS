@@ -1,6 +1,4 @@
-<?php session_start(); ?>
-<?php require_once('inc/connection.php'); ?>
-<?php require_once('inc/functions.php'); ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,11 +26,11 @@
 
     <main>
         <div class="container">
-            <div class="row-home">
+            <div>
                 <div>
                     <h1><span class="brand-name">Facilities</span></h1>
                 </div>
-                <div>
+                <div class="facilities">
                     <p>Welcome to our technical support management system! Our platform is designed to streamline your support operations
                         and improve the overall customer experience. With our system, you can:</p>
                     <ul>
@@ -61,4 +59,3 @@
 
 
 </html>
-<?php mysqli_close($connection); ?>

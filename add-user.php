@@ -42,6 +42,7 @@ if (isset($_POST['submit'])) {
 	$query = "SELECT * FROM tbl_user WHERE email = '{$email}' LIMIT 1";
 
 	$result_set = mysqli_query($connection, $query);
+	verify_query($result_set);
 
 	if ($result_set) {
 		if (mysqli_num_rows($result_set) == 1) {
@@ -69,6 +70,7 @@ if (isset($_POST['submit'])) {
 		$query .= ")";
 
 		$result = mysqli_query($connection, $query);
+		verify_query($result);
 
 		if ($result) {
 			// query successful... redirecting to users page

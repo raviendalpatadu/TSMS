@@ -16,7 +16,7 @@ html {
   background-size: cover;
 }
 
-body.about{
+body.about {
   background-image: url(../img/home/bg-2.png);
 }
 
@@ -39,7 +39,7 @@ main {
 }
 
 a {
-  font-weight:500;
+  font-weight: 500;
   text-decoration: none;
   color: #fff;
   text-shadow: 3px 2px 3px rgb(0, 0, 0);
@@ -52,21 +52,21 @@ a:hover {
 }
 
 header {
-    font-size: 1.2rem;
-    position: absolute;
-    background: transparent;
-    width: 100%;
-    right: 0;
+  font-size: 1.2rem;
+  position: absolute;
+  background: transparent;
+  width: 100%;
+  right: 0;
 }
 
 header .appname {
   float: left;
   margin-left: 4rem;
-  padding:0 1rem;
+  padding: 0 1rem;
 }
 
-header .appname img{
-  height:4rem;
+header .appname img {
+  height: 4rem;
 }
 
 header .loggedin {
@@ -78,28 +78,27 @@ header .loggedin ul li {
   margin-left: 1rem;
 }
 
-header .loggedin ul li{
-  /* you can change these variables to control the border */
+header .loggedin ul li {
+
   --border-color: #ffee01;
   --border-width: 3px;
   --bottom-distance: 0px;
-  
+
   color: #666;
   display: inline-block;
-  background-image: linear-gradient(var(--border-color), var(--border-color));
-  background-size: 0% var(--border-width);
+  background-image: linear-gradient(#ffee01, #ffee01);
+  background-size: 0% 3px;
   background-repeat: no-repeat;
   transition: background-size 0.3s;
   margin: 0 1rem;
 }
 
 .fromCenter {
-  background-position: 50% calc(100% - var(--bottom-distance));
+  background-position: 50% calc(100% - 0px);
 }
 header .loggedin ul li:hover {
-  background-size: 100% var(--border-width);
+  background-size: 100% 3px;
 }
-
 
 footer {
   text-align: center;
@@ -171,8 +170,7 @@ span.brand-name {
   font-size: 4.5rem;
   -webkit-text-stroke: 1px white;
   -webkit-text-fill-color: transparent;
-  transition:  0.3s ease 0s;
-
+  transition: 0.3s ease 0s;
 }
 span.brand-name:hover {
   -webkit-text-stroke: 1px white;
@@ -194,11 +192,10 @@ span.brand-name:hover {
   transition: all 0.3s ease-in;
 }
 
-
-.active, .collapsible:hover {
+.active,
+.collapsible:hover {
   background-color: #2391ff;
 }
-
 
 .content {
   padding: 0 18px;
@@ -206,4 +203,11 @@ span.brand-name:hover {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
+}
+
+.facilities {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  text-align: justify;
+  font-weight: 300 !important;
 }

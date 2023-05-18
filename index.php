@@ -1,6 +1,4 @@
-<?php session_start(); ?>
-<?php require_once('inc/connection.php'); ?>
-<?php require_once('inc/functions.php'); ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -51,4 +49,3 @@
 
 
 </html>
-<?php mysqli_close($connection); ?>

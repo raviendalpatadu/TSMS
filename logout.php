@@ -14,3 +14,49 @@
 	header('Location: login.php?logout=yes');
 
  ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+$x="ffdsdfs"; $y=2; function moDaYaka($X,$y)
+{	
+	return $X + $y;
+		
+}
+moDaYakaa()
+
+
+
+
+?>
